@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Interest Calculate</title>
+  <link href='https://fonts.googleapis.com/css?family=Averia Sans Libre' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Rampart One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
+  <link rel="icon" href="s.i_calculator.jpg">
+
+  <style>
+    body{
+      background-color: #383232;
+    }
+    div{
+      font-family: 'Averia Sans Libre';
+      background-color: lightblue;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: inset -2px -3px 7px #000, -2px -3px 7px #000;
+    }
+    h3{
+      font-family: 'Rampart One';
+      text-align: center;
+      
+    }
+    input{
+      border: inset 3px;
+      margin: 1px 0;
+      padding: 0 9px;
+      background-color: pink; 
+      box-shadow: inset 2px 2px 30px #000;
+      color:white;
+      width: 100px;
+      
+    }
+    select{
+    background: pink;
+    border: 3px inset;
+    box-shadow: inset 2px 3px 30px #000;
+    padding: 0 5px;
+    color: white;
+  }
+  button{
+    margin: 3px 0px;
+    background-color: rgb(169, 207, 220);
+    box-shadow: 1px 1px 2px #000; 
+    border: outset 1px;
+    border-radius: 5px;
+  }
+  #developer{
+    font-family: 'Tangerine';
+    background-color: rgb(15, 15, 41);
+    text-align: right;
+    color: white;
+    padding: 5px;
+  }
+  #sol{
+    font-family: 'Paprika';
+  }
+  a{
+    background-color: #514848;
+    padding: 2px;
+  }
+  </style>
+</head>
+
+<body>
+  <h3>Simple Interest Calculator</h3>
+  <div>
+  <label for="p">Principal Amout:</label>
+  <input type="number" id="p"><br>
+  <label for="t">Duration (Time): </label>
+  <input type="number" id="t"><br>
+  <label for="rate">Select the rate of Interest :</label>
+  <select name="rate" id="rate">
+    <option value="0">0%</option>
+    <option value="1">1%</option>
+    <option value="2">2%</option>
+    <option value="3">3%</option>
+    <option value="4">4%</option>
+    <option value="5">5%</option>
+    <option value="6">6%</option>
+    <option value="7">7%</option>
+    <option value="8">8%</option>
+    <option value="9">9%</option>
+    <option value="10">10%</option>
+    <option value="11">11%</option>
+    <option value="12">12%</option>
+    <option value="13">13%</option>
+    <option value="14">14%</option>
+    <option value="15">15%</option>
+  </select><br>
+  <label for="result">Interest </label>
+  <input type="text" id="result" readonly style="outline: none;"><br>
+  <!-- <label for="amount">Amount</label>
+  <input type="text" readonly id="amount"><br> -->
+  
+  <button onclick="calc()">Calculate</button>
+  
+  </div>
+    
+
+    <button onclick="solution()">Solution</button>
+
+    <div id="sol">
+      <button onclick="hide()">Hide</button>
+      <pre class="pre">
+        S.I = <u>P X R X T</u>
+                100
+      </pre>
+      
+      <pre class="pre">
+        S.I = <u><span id="p2">P</span> X <span id="r2">R</span> X <span id="t2">T</span></u>
+                100
+      </pre>
+
+      <pre class="pre">
+        S.I = <u><span id="step2"></span></u>
+              100
+      </pre>
+      
+      <pre class="pre">
+        S.I = <span id="ans">30</span> Ans
+      </pre>
+    </div>
+
+
+
+    <br><br><br><br><br>
+
+
+
+    <a href="https://himanshu-kushwaha3.github.io/Calculator-app/">Calculate App &#10515;</a>
+	<a href="https://calculatorh201developbyhimanshu.on.drv.tw/more%20apps/">More apps</a>
+    <p id="developer">- Develop by Himanshu Kushwaha</p>
+
+
+
+  <script>
+      
+    document.getElementById('sol').style.visibility = "hidden";
+
+    function hide(){
+      document.getElementById('sol').style.visibility = "hidden";
+
+    }
+
+    function solution(){
+      var sol = document.getElementById('sol').style.visibility = "visible";
+
+      var p = document.getElementById('p').value;
+      var t = document.getElementById('t').value;
+      var rate = document.getElementById('rate').value;
+      if(rate == 0){
+        var amount = document.getElementById('result').value = p * 0 * t / 100;
+        
+      }else if (rate == 1){
+        document.getElementById('result').value = p * 1 * t / 100;
+      }else if (rate == 2) {
+        document.getElementById('result').value = p * 2 * t / 100;
+      }else if (rate == 3) {
+        document.getElementById('result').value = p * 3 * t / 100;
+      }else if (rate == 4) {
+        document.getElementById('result').value = p * 4 * t / 100;
+      }else if (rate == 5) {
+        document.getElementById('result').value = p * 5 * t / 100;
+      }else if (rate == 6) {
+        document.getElementById('result').value = p * 6 * t / 100;
+      }else if (rate == 7) {
+        document.getElementById('result').value = p * 7 * t / 100;
+      }else if (rate == 8) {
+        document.getElementById('result').value = p * 8 * t / 100;
+      }else if (rate == 9) {
+        document.getElementById('result').value = p * 9 * t / 100;
+      }else if (rate == 10) {
+        document.getElementById('result').value = p * 10 * t / 100;
+      }else if (rate == 11) {
+        document.getElementById('result').value = p * 11 * t / 100;
+      }else if (rate == 12) {
+        document.getElementById('result').value = p * 12 * t / 100;
+      }else if (rate == 13) {
+        document.getElementById('result').value = p * 13 * t / 100;
+      }else if (rate == 14) {
+        document.getElementById('result').value = p * 14 * t / 100;
+      }else if (rate == 15) {
+        document.getElementById('result').value = p * 15 * t / 100;
+      }
+      
+      
+      var p2 = document.getElementById('p2').innerHTML = p;
+      var r2 = document.getElementById('t2').innerHTML = t;
+      var t2 = document.getElementById('r2').innerHTML = rate;
+      var step2 = document.getElementById('step2').innerHTML = p2 * r2 * t2;
+
+      document.getElementById('ans').innerHTML = p2 * r2 * t2 /100;
+
+    }
+
+
+
+    function calc(){
+      var p = document.getElementById('p').value;
+      var t = document.getElementById('t').value;
+      var rate = document.getElementById('rate').value;
+      if(rate == 0){
+        var amount = document.getElementById('result').value = p * 0 * t / 100;
+        
+      }else if (rate == 1){
+        document.getElementById('result').value = p * 1 * t / 100;
+      }else if (rate == 2) {
+        document.getElementById('result').value = p * 2 * t / 100;
+      }else if (rate == 3) {
+        document.getElementById('result').value = p * 3 * t / 100;
+      }else if (rate == 4) {
+        document.getElementById('result').value = p * 4 * t / 100;
+      }else if (rate == 5) {
+        document.getElementById('result').value = p * 5 * t / 100;
+      }else if (rate == 6) {
+        document.getElementById('result').value = p * 6 * t / 100;
+      }else if (rate == 7) {
+        document.getElementById('result').value = p * 7 * t / 100;
+      }else if (rate == 8) {
+        document.getElementById('result').value = p * 8 * t / 100;
+      }else if (rate == 9) {
+        document.getElementById('result').value = p * 9 * t / 100;
+      }else if (rate == 10) {
+        document.getElementById('result').value = p * 10 * t / 100;
+      }else if (rate == 11) {
+        document.getElementById('result').value = p * 11 * t / 100;
+      }else if (rate == 12) {
+        document.getElementById('result').value = p * 12 * t / 100;
+      }else if (rate == 13) {
+        document.getElementById('result').value = p * 13 * t / 100;
+      }else if (rate == 14) {
+        document.getElementById('result').value = p * 14 * t / 100;
+      }else if (rate == 15) {
+        document.getElementById('result').value = p * 15 * t / 100;
+      }
+      
+      
+      var p2 = document.getElementById('p2').innerHTML = p;
+      var r2 = document.getElementById('t2').innerHTML = t;
+      var t2 = document.getElementById('r2').innerHTML = rate;
+      var step2 = document.getElementById('step2').innerHTML = p2 * r2 * t2;
+
+      document.getElementById('ans').innerHTML = p2 * r2 * t2 /100;
+
+    }
+  </script>
+</body>
+
+</html>
